@@ -2,5 +2,5 @@ import React from "react";
 import ReactDOM from "react-dom"
 import Layout from "./components/Layout";
 
-app = document.getElementById('app');
+const app = document.querySelector('#app');
 ReactDOM.render(<Layout/>, app);

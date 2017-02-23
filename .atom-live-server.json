@@ -1,5 +1,4 @@
 {
-  "browser": "safari",
-  "wait": "100",
+  "wait": "1000",
   "root": "src"
 }

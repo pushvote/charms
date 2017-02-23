@@ -7,17 +7,19 @@ import Header from "./Header";
 export default class Layout extends React.Component {
     constructor() {
         super();
-        this.state = {name: "Jared"};
+        this.state = {
+            title: "Welcomezzz"
+        }
+
+    }
+    changeTitle(title){
+      this.setState({title});
     }
     render() {
-      setTimeout(() => {
-        this.setState({name: "Brad"})
-      }, 1000)
         return (
             <div>
-                {this.state.name}
-                <Header/>
-                <Footer/>
+              <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title}  />
+              <Footer />
             </div>
         );
     }
