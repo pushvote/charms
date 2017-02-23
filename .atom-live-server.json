@@ -1,5 +1,5 @@
 {
-  "browser": "explorer",
+  "browser": "safari",
   "wait": "100",
   "root": "src"
 }
