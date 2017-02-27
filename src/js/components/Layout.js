@@ -9,14 +9,21 @@ export default class Layout extends React.Component {
         super();
         this.state = {name: "Jared"};
     }
+
     render() {
+
+      const containerStyle = {
+          margin: "60px", /*
+          background: "#73AD21"*/
+      };
+
       setTimeout(() => {
         this.setState({name: "Brad"})
       }, 1000)
         return (
-            <div>
-                {this.state.name}
-                <Header/>
+            <div style={containerStyle}>
+              <Header title={this.state.name}/>
+              {this.props.children}
                 <Footer/>
             </div>
         );
