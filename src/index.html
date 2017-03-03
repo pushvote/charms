@@ -1,14 +1,199 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>React Tutorial</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-  </head>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" id="test" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="#">PushVote Demo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login_<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form-group" style="padding: 0px 20px;">
+        <input class="form-control" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+      sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+    </div>
 
 
-  <body>
+    <div style="padding: 0px 20px;">
+        <h3>Search Results</h3>
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="false">All</a></li>
+                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Personal</a></li>
+                <li><a href="#profile" data-toggle="tab" aria-expanded="false">Master</a></li>
+                <li class="dropdown navbar-right">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Search History Settings <span class="caret"></span>  </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#home" data-toggle="tab">Bottomless Scroll</a></li>
+                        <li><a href="#profile" data-toggle="tab">Another action</a></li>
+                    </ul>
+                </li>
+                <div>
+                    <input class="form-control  .d-inline-block" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+        sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+                </div>
+            </ul>
+        </div>
+
+        <div class="tab-pane fade active in" id="home">
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>xxx Column heading</th>
+                        <th>Column heading</th>
+                        <th>Column heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="warning">
+                        <td>1</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>
+                    <tr class="active">
+                        <td>2</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>
+                    <tr class="info">
+                        <td>3</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>
+                    <tr class="success">
+                        <td>4</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>
+                    <tr class="danger">
+                        <td>5</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div style="padding: 0px 20px;">
+        <h3>Vote Lists</h3>
+
+        <span class="breadcrumb .d-inline-block">
+
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+        </span>
+
+        <div style="margin-top: 10px">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="false">All</a></li>
+                <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Personal</a></li>
+                <li><a href="#profile" data-toggle="tab" aria-expanded="false">Master</a></li>
+                <li class="dropdown navbar-right">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> VoteList Settings <span class="caret"></span>  </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#home" data-toggle="tab">Bottomless Scroll</a></li>
+                        <li><a href="#profile" data-toggle="tab">Another action</a></li>
+                    </ul>
+                </li>
+                <div>
+                    <input class="form-control  .d-inline-block" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+  sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+                </div>
+            </ul>
+        </div>
+
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="warning">
+                    <td>1</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                </tr>
+                <tr class="active">
+                    <td>2</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                </tr>
+                <tr class="info">
+                    <td>3</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                </tr>
+                <tr class="success">
+                    <td>4</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                </tr>
+                <tr class="danger">
+                    <td>5</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+    </div>
     <div id="app"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="client.min.js"></script>
-  </body>
+</body>
+
 </html>
