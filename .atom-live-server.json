@@ -1,5 +1,5 @@
 {
-  "browser": "chrome",
   "wait": "100",
-  "root": "src"
+  "root": "src",
+  "port": "7000"
 }
