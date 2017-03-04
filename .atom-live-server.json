@@ -1,5 +1,5 @@
 {
+  "port": "7000",
   "wait": "100",
-  "root": "src",
-  "port": "7000"
+  "root": "src"
 }
