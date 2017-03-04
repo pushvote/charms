@@ -10,8 +10,7 @@ export default class Layout extends React.Component {
         this.state = {name: "Jared"};
     }
 
-
-    render1() {
+    render() {
 
       const containerStyle = {
           margin: "60px", /*
@@ -23,10 +22,9 @@ export default class Layout extends React.Component {
       }, 1000)
         return (
             <div style={containerStyle}>
-
               <Header title={this.state.name}/>
               {this.props.children}
-              <Footer/>
+                <Footer/>
             </div>
         );
     }
