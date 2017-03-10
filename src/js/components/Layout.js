@@ -1,7 +1,11 @@
 //This is needed for all react files?
 import React from "react";
+import Header from "./header/Header";
+import Search from "./search/Search";
+import Lists from "./lists/Lists";
 import Footer from "./Footer";
-import Header from "./Header";
+import Dragula from 'react-dragula';
+
 
 //this allows us to import Layout
 export default class Layout extends React.Component {
@@ -10,24 +14,20 @@ export default class Layout extends React.Component {
         this.state = {name: "Jared"};
     }
 
-
-    render1() {
+    render() {
 
       const containerStyle = {
-          margin: "60px", /*
-          background: "#73AD21"*/
+          margin: "20px",
+          /*background: "#73AD21"*/
       };
-
-      setTimeout(() => {
-        this.setState({name: "Brad"})
-      }, 1000)
         return (
-            <div style={containerStyle}>
-
-              <Header title={this.state.name}/>
-              {this.props.children}
-              <Footer/>
-            </div>
+<div>
+  <Header title={this.state.name}/>
+  <div style={containerStyle}>
+    <Search title={this.state.name}/>
+    <Lists title={this.state.name}/>
+  </div>
+</div>
         );
     }
 }

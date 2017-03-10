@@ -2,10 +2,10 @@
 import React from "react";
 
 //this allows us to import Layout
-export default class Title extends React.Component {
+export default class Banner extends React.Component {
     render() {
         return (
-          <div>Welcome {this.props.title}!</div>
+            <a class="navbar-brand" href="#">PushVote Demo</a>
         );
     }
 }

