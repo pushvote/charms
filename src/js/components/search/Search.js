@@ -23,7 +23,7 @@ export default class Search extends React.Component {
 
     createCellChildren({results}) {
         if (results.length > 0 && results !== "") {
-            const listChildren = results.map((result, index) => `"${result.category_name}",`)
+            const listChildren = results.map((result, index) => <a href="test">`"${result.category_name}",`</a>)
             return <td>
                 {listChildren}
             </td>;

@@ -9,13 +9,7 @@ import ViewSettings from "./ViewSettings";
 
 //this allows us to import Layout
 export default class Results extends React.Component {
-
-
-
-    componentWillUnmount() {
-
-
-    };
+    componentWillUnmount() {};
 
     dragulaDecorator = (componentBackingInstance) => {
         if (componentBackingInstance) {
@@ -25,11 +19,9 @@ export default class Results extends React.Component {
     };
 
     render() {
-
         return (
             <div>
               <h3>Search Results</h3>
-
               <ul class="nav nav-tabs">
                 <li class="active">
                   <a href="#allResultsTable" data-toggle="tab" aria-expanded="false">Results</a>
@@ -51,16 +43,15 @@ export default class Results extends React.Component {
                   <input class="form-control .d-inline-block" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
                     sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title=""/>
                 </div>
-              </ul>
+                </ul>
 
-              <div id="myTabContent" class="tab-content">
-
-                <Tab_Results searchResults={this.props.searchResults}/>
-                <Tab_Personal/>
-                <Tab_Master/>
-                <Tab_History/>
-                <Tab_Marked/>
-              </div>
+                <div id="myTabContent" class="tab-content">
+                    <Tab_Results searchResults={this.props.searchResults}/>
+                    <Tab_Personal/>
+                    <Tab_Master/>
+                    <Tab_History/>
+                    <Tab_Marked/>
+                </div>
 
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">{/*<!-- new line here because anything below here gets centerd!? -->*/}</div>
