@@ -43,13 +43,13 @@ export default class Results extends React.Component {
                   <input class="form-control .d-inline-block" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
                     sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title=""/>
                 </div>
-                </ul>
+              </ul>
 
-                <div id="myTabContent" class="tab-content">
-                    <Tab_Results searchResults={this.props.searchResults}/>
-                    <Tab_Personal/>
-                    <Tab_Master/>
-                    <Tab_History/>
+              <div id="myTabContent" class="tab-content">
+                <Tab_Results searchPersonalResults={this.props.searchPersonalResults} searchMasterResults={this.props.searchMasterResults}/>
+                <Tab_Personal/>
+                <Tab_Master/>
+                <Tab_History/>
                     <Tab_Marked/>
                 </div>
 

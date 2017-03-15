@@ -27,8 +27,8 @@ export default class Layout extends React.Component {
               <Header/>
               <div style={containerStyle}>
                 <Search />
-                <Lists/>
-                </div>
+                <Lists />
+              </div>
             </div>
         );
     }

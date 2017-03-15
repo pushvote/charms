@@ -10,12 +10,12 @@ export default class Tab_Results extends React.Component {
 
               <div class="col-xs-6">
                 <h6>Personal List Search Results</h6>
-                {this.props.searchResults}
+                {this.props.searchPersonalResults}
               </div>
 
               <div class="col-xs-6">
                 <h6>Master List Search Results</h6>
-                {this.props.searchResults}
+                {this.props.searchMasterResults}
               </div>
 
             </div>

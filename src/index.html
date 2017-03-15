@@ -7,6 +7,16 @@
     <!-- possibly use stylish to do css stuff -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="css/dragula.css" type="text/css" rel="stylesheet">
+
+    <style>
+        .setWidth {
+            max-width: 10px,
+        }
+
+        .concat {
+            overflow: hidden, -ms-text-overflow: ellipsis, -o-text-overflow: ellipsis, text-overflow: ellipsis, white-space: nowrap, width: inherit
+        }
+    </style>
 </head>
 
 <body>
@@ -16,8 +26,22 @@
 
     <div id="app"></div>
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="./js/lib/fingerprint2.min.js"></script>
+    <script src="./js/lib/chance.min.js"></script>
     <script>
-            socket_vote = io.connect("10.1.1.51:3000");
+        socket_vote = io.connect("10.1.1.51:3000");
+
+        //var person_name = (chance.name() + "#" + chance.integer({min: 0, max: 100});)
+        var person_name = "Batman";
+        var person_id;
+        var promise = new Promise(function(resolve, reject) {
+            new Fingerprint2().get(function(result, components) {
+                resolve(result);
+            });
+        });
+        promise.then(function(fingerprint) {
+            person_id = fingerprint;
+        });
 
         /*  Websocket
              websocket = new WebSocket("ws://echo.websocket.org/");

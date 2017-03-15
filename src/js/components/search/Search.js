@@ -3,14 +3,15 @@ import React from "react";
 import Results from "./results/Results";
 import Dragula from 'react-dragula';
 
+
 //this allows us to import Layout
 export default class Search extends React.Component {
 
     constructor() {
         super();
-
         this.state = {
-            parentSearchResults: this.createTable({results: ""})
+            parentSearchPersonalResults: this.createPersonalTable({results: ""}),
+            parentSearchMasterResults: this.createMasterTable({results: ""})
         };
     };
 
@@ -22,27 +23,45 @@ export default class Search extends React.Component {
     };
 
     createCellChildren({results}) {
+
         if (results.length > 0 && results !== "") {
-            const listChildren = results.map((result, index) => <a href="test">`"${result.category_name}",`</a>)
-            return <td>
-                {listChildren}
+            const listChildren = results.map((result, index) =>
+            <a href={"/category_id/" + result.id} key={result.id}>{result.category_name} </a>)
+            return (<td class="setWidth concat" key={Math.random().toString()}>
+              <div>{listChildren}</div>
+            </td>);
+        } else {
+            return <td style={this.styleTD} key={Math.random().toString()}>No Children</td>
+            }
+              }
+
+    createCellPeople({results}) {
+        if (results.length > 0 && results !== "") {
+            const listChildren = results.map((result, index) => <a href={"/person_id/" + result.uid} key={result.uid}>{result.name},</a>)
+            return <td key={Math.random().toString()}>
+              {listChildren}
             </td>;
         } else {
-            return <td key={Math.random().toString()}>"No Children"</td>
+            return <td key={Math.random().toString()}>Error: No People?</td>
         }
     }
 
+  createCellCategory({category}){
+      return (
+        <td key={category.id.toString()}>
+          <a href={"/category_id/" + category.id}>{category.category_name}</a>
+        </td>)
+    }
+
     createRow({results}) {
-        if (results.length > 0 && results !== "") {
+        if (results && results.length > 0 && results !== "") {
             const listItems = results.map((result, index) => (
                 <tr class="warning" key={index}>
-                    <td>{index + 1}</td>
-                    <td key={result.category.id.toString()}>
-                        {result.category.category_name}
-                    </td>
+                  <td>{index + 1}</td>
 
-                    {this.createCellChildren({results: result.category_children})}
-
+                  {this.createCellCategory({category: result.category})}
+                  {this.createCellChildren({results: result.category_children})}
+                  {this.createCellPeople({results: result.category_people})}
                 </tr>
             ));
 
@@ -50,32 +69,54 @@ export default class Search extends React.Component {
         } else {
             return (
                 <tr class="warning">
-                    <td>1</td>
-                    <td>{"Waiting for results..."}</td>
-                    <td>{"Waiting for results..."}</td>
-                    <td>{"Waiting for results..."}</td>
+                  <td class="col-xs-1">1</td>
+                  <td class="col-xs-1">{"Waiting for results..."}</td>
+                  <td class="col-xs-2">{"Waiting for results..."}</td>
+                  <td class="col-xs-2">{"Waiting for results..."}</td>
                 </tr>
             );
         }
-
     }
 
-    createTable({results}) {
+    createPersonalTable({results}) {
+        //console.log(results);
+        //console.log(results && results[0] && results[0].category_people[0].uid);
+        //filter out non-personal results
+        if (results.length > 0) {
+            results = results.filter((result) => result.category_people.some((person) => person.uid == person_id))
+        }
+
         return (
             <table class="table-responsive table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Children</th>
-                        <th>People</th>
-                    </tr>
-                </thead>
-                <tbody ref={this.dragulaDecorator}>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Children</th>
+                  <th>People</th>
+                </tr>
+              </thead>
+              <tbody ref={this.dragulaDecorator}>
+                {this.createRow({results})}
+              </tbody>
+            </table>
+        );
+    }
 
-                    {this.createRow({results})}
-
-                </tbody>
+    createMasterTable({results}) {
+        return (
+            <table class="table-responsive table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Children</th>
+                  <th>People</th>
+                </tr>
+              </thead>
+              <tbody ref={this.dragulaDecorator}>
+                {this.createRow({results})}
+              </tbody>
             </table>
         );
     }
@@ -85,30 +126,45 @@ export default class Search extends React.Component {
         socket_vote.on('autocomplete_result', (results) => {
             if (results.length > 0) {
                 this.setState({
-                    parentSearchResults: this.createTable({results})
+                    parentSearchPersonalResults: this.createPersonalTable({results}),
+                    parentSearchMasterResults: this.createMasterTable({results})
+                });
+            } else {
+                this.setState({
+                    parentSearchPersonalResults: this.createPersonalTable({results: ""}),
+                    parentSearchMasterResults: this.createMasterTable({results: ""})
                 });
             }
 
         });
     };
 
-    search(e) {
+    searchMainAutoComplete(e) {
         if (e.target.value !== '') {
-            socket_vote.emit('autocomplete_request', '1', 'JBoo', e.target.value);
+            socket_vote.emit('autocomplete_request', person_id, person_name, e.target.value);
         } else {
             this.setState({
-                parentSearchResults: this.createTable({results: ''})
+                parentSearchPersonalResults: this.createPersonalTable({results: ""}),
+                parentSearchMasterResults: this.createMasterTable({results: ""})
             });
         }
     };
 
+    searchMainEnter(e) {
+        if (e.keyCode === 13) {
+            socket_vote.emit('switch_to_word_request', person_id, person_name, e.target.value);
+            socket_vote.emit('autocomplete_request', person_id, person_name, e.target.value); //TODO: make this one request only
+            e.target.value = "";
+        }
+    }
+
     render() {
         return (
             <div>
-                <div class="form-group">
-                    <input onChange={this.search.bind(this)} class="form-control" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title=""/>
-                </div>
-                <Results searchResults={this.state.parentSearchResults}/>
+              <div class="form-group">
+                <input onKeyUp={this.searchMainEnter} onChange={this.searchMainAutoComplete.bind(this)} class="form-control" placeholder="Search" type="text" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title=""/>
+              </div>
+              <Results searchPersonalResults={this.state.parentSearchPersonalResults} searchMasterResults={this.state.parentSearchMasterResults}/>
             </div>
         );
     }
